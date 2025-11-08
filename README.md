@@ -1,8 +1,10 @@
-🎌 Anime Recommendation System
+# 🎌 Anime Recommendation System
 
 A Python-based recommendation engine that suggests anime using item-based collaborative filtering. Analyzes user rating patterns to find similar anime using Pandas library.
 
-# 🚀 Quick Start
+# Tecnology
+
+## 🚀 Quick Start
 
 ## Installation
 
