@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/home.css"> 
+        <script src="../js/home.js"></script> 
+    <title>Anime AI Recommender - Inicio</title> 
+</head>
+<body>
+    <!-- Header con navegación -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Anime AI Recommender</div>
+                <div class="user-menu">
+                    <span id="userName">Usuario</span>
+                    <div class="user-avatar" id="userAvatar">U</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de búsqueda -->
+    <section class="search-section">
+        <div class="container">
+            <h1>Encuentra tu próximo anime favorito</h1>
+            <p>Busca entre nuestra amplia colección y descubre nuevas recomendaciones</p>
+            
+            <form class="search-form" id="searchForm">
+                <input type="text" class="search-input" id="searchInput" placeholder="Buscar anime por nombre...">
+                <button type="submit" class="search-button">Buscar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Sección de resultados -->
+    <section class="results-section">
+        <div class="container">
+            <h2>Resultados de búsqueda</h2>
+            <div class="results-grid" id="resultsGrid">
+                <!-- Los resultados se cargarán aquí dinámicamente -->
+                <div class="no-results" id="noResults" style="display: none; grid-column: 1 / -1; text-align: center; padding: 40px;">
+                    <p>No se encontraron animes. Intenta con otro término de búsqueda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de reseñas del usuario -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="reviews-header">
+                <h2>Mis Reseñas</h2>
+                <button class="view-profile-button" id="viewProfileButton">Ver Perfil Completo</button>
+            </div>
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- Las reseñas del usuario se cargarán aquí dinámicamente -->
+                <div class="no-reviews" id="noReviews" style="display: none; grid-column: 1 / -1; text-align: center; padding: 40px;">
+                    <p>Aún no has escrito ninguna reseña.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modal de detalles del anime -->
+    <div class="modal" id="animeDetailModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeDetailModal">&times;</span>
+            <div class="anime-detail">
+                <img src="" alt="Poster del anime" class="anime-detail-poster" id="animeDetailPoster">
+                <div class="anime-detail-info">
+                    <h2 class="anime-detail-title" id="animeDetailTitle">Título del Anime</h2>
+                    <div class="anime-meta">
+                        <span id="animeDetailYear">Año</span>
+                        <span id="animeDetailRating">Rating</span>
+                        <span id="animeDetailEpisodes">Episodios</span>
+                    </div>
+                    <p class="anime-synopsis" id="animeDetailSynopsis">Sinopsis del anime...</p>
+                    <div class="anime-genres" id="animeDetailGenres">
+                        <!-- Géneros se cargarán aquí -->
+                    </div>
+                </div>
+            </div>
+            <button class="review-button" id="writeReviewButton">Escribir Reseña</button>
+        </div>
+    </div>
+
+    <!-- Modal para escribir reseña -->
+    <div class="review-form-modal" id="reviewFormModal">
+        <div class="review-form-content">
+            <h2 class="review-form-title" id="reviewFormTitle">Escribir Reseña</h2>
+            <form id="reviewForm">
+                <input type="hidden" id="reviewAnimeId">
+                <input type="hidden" id="reviewId">
+                
+                <div class="form-group">
+                    <label class="form-label" for="reviewRating">Calificación</label>
+                    <select class="form-select" id="reviewRating" required>
+                        <option value="">Selecciona una calificación</option>
+                        <option value="1">1 - Muy malo</option>
+                        <option value="2">2 - Malo</option>
+                        <option value="3">3 - Regular</option>
+                        <option value="4">4 - Bueno</option>
+                        <option value="5">5 - Excelente</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="reviewText">Reseña</label>
+                    <textarea class="form-textarea" id="reviewText" placeholder="Escribe tu reseña aquí..." required></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="cancel-button" id="cancelReview">Cancelar</button>
+                    <button type="submit" class="submit-button">Guardar Reseña</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Anime AI Recommender. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
